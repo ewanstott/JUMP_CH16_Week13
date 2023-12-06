@@ -1,3 +1,4 @@
+//counter example
 const rootRef = document.getElementById("root");
 
 const end = new Date(Date.now() + 10000).getTime();
