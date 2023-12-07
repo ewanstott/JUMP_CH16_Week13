@@ -1,3 +1,5 @@
+const rootRef = document.getElementById("root");
+
 async function getApiData() {
   const result1 = await axios.get(
     `https://thesimpsonsquoteapi.glitch.me/quotes?character=homer simpson`
