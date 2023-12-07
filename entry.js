@@ -1,23 +1,32 @@
-//counter example
 const rootRef = document.getElementById("root");
 
-const end = new Date(Date.now() + 10000).getTime();
+const btnRef = document.getElementById("getLocation");
 
-let timer = setInterval(() => {
-  const distance = end - Date.now();
+btnRef.addEventListener("click", (e) => {
+  const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
 
-  if (distance <= 0) {
-    rootRef.innerHTML = "All done!";
-    clearInterval(timer);
-    return;
+  //get location once
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
+  //keep getting location
+  // navigator.geolocation.watchPosition(success, error);
+
+  function success(data) {
+    console.log(data);
+
+    const { longitude, latitude } = data.coords;
+    console.log(data);
+    rootRef.innerHTML = `<h1>Your location is: </h1>
+                          <p>${longitude}, ${latitude}</p>
+                          <a href="https://www.google.com/maps/place/${latitude},${longitude}">See on Google Maps</a>`;
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24)); //1 day
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  rootRef.innerHTML = `${days} days, ${hours} hours, ${minutes} mins, ${seconds} secs`;
-}, 1000);
+  function error(err) {
+    console.log(err);
+    rootRef.innerHTML = err.message;
+  }
+});
