@@ -14,7 +14,7 @@
 
 // 2. Create today's date
 
-const todayDate = new Date();
+// const todayDate = new Date();
 // console.log(todayDate);
 
 // 3. Get the current timestamp (using a static method of Date)
@@ -24,22 +24,25 @@ const todayDate = new Date();
 // 4. Create a date to represent next Christmas Day
 
 // Date(year, monthIndex, date, hour, min, seconds, milliseconds);
-const nextXmasDay = new Date(2024, 11, 25, 0, 0, 0);
+// const nextXmasDay = new Date(2024, 11, 25, 0, 0, 0);
 // console.log(nextXmasDay);
 
 // 5. Work out how many days it is until christmas
 
 // Get difference between now and xmas
+// const todayDate = new Date();
+// const nextXmasDay = new Date(2024, 11, 25, 0, 0, 0);
 
-// time difference in milliseconds:
-const timeDifference = nextXmasDay - todayDate;
-console.log(timeDifference);
+// // time difference in milliseconds:
+// const timeDifference = nextXmasDay - todayDate;
+// console.log(timeDifference);
 
-// Divide by number of ms in 1 day:
-// milliseconds per day = 24 hrs/day * 60 minutes/hour * 60 seconds/minute * 1000 msecs/second
-// Convert milliseconds to days
-const daysUntilXmas = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
-console.log(daysUntilXmas);
+// // Divide by number of ms in 1 day:
+// // milliseconds per day = 24 hrs/day * 60 minutes/hour * 60 seconds/minute * 1000 msecs/second
+// // Convert milliseconds to days
+// const daysUntilXmas = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
+// console.log(daysUntilXmas);
+
 // Math.floor for whole days; Math.ceil to include today
 
 // Notes:
@@ -74,15 +77,56 @@ console.log(daysUntilXmas);
 
 // console.log("date2", date2);
 
+// if (date1 < date2) {
+//   console.log("Date1 is earlier than Date2");
+// } else if (date2 > date1) {
+//   console.log("Date2 is earlier than Date1");
+// } else console.log("Date1 and Date2 are equal");
+
 // 7. How do I test if a date is valid? ****
+
+//isNAN() - is Not-a-Number
+
+// function isDateValid(d) {
+//   return !isNaN(d);
+// }
+// console.log(isDateValid(date2));
 
 // 8. Output today in the following format: MM-DD-YYYY - using the getter methods on the date object
 
+// const today = new Date();
+// //FormateDate function:
+// function formatDate(date, format) {
+//   return format
+//     .replace("mm", date.getMonth() + 1)
+//     .replace("dd", date.getDate())
+//     .replace("yy", date.getFullYear().toString().slice(-2)); // converting 'yyyy' to a string so I can use slice here to remove 1st 2 digits
+// }
+// console.log(formatDate(today, "mm/dd/yy"));
+
 // 9. Now output it using toLocaleDateString in english ('en-GB') and in german ('de-DE')
+
+// const today = new Date().toLocaleDateString("en-GB");
+// const today = new Date().toLocaleDateString("de-DE");
+// console.log(today);
 
 // 10. Output the current time in hours, mins & seconds
 
+// const currentTime = new Date();
+
+// const hours = currentTime.getHours();
+// const minutes = currentTime.getMinutes();
+// const seconds = currentTime.getSeconds();
+
+// const currentTimeHoursMinsSecs = `${hours}:${minutes}:${seconds}`;
+
+// console.log(currentTimeHoursMinsSecs);
+
 // 11. Make a clock by starting with the current time and then every second adds a second to the date and prints it.
+
+// 2.34
+
+const currentTime = new Date();
 
 // 12. Create a copy of today
 
