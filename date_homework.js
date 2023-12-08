@@ -124,19 +124,91 @@
 
 // 11. Make a clock by starting with the current time and then every second adds a second to the date and prints it.
 
-// 2.34
+// function for clock
+// function clockFunction() {
+//   const currentTime = new Date();
+//   const hours = currentTime.getHours();
+//   const minutes = currentTime.getMinutes();
+//   const seconds = currentTime.getSeconds();
 
-const currentTime = new Date();
+//   const clock = `${hours}:${minutes}:${seconds}`;
+//   console.log(clock);
+// }
+// // Initial call to display the current time
+// clockFunction();
+// // Update the clock every second
+// setInterval(clockFunction, 1000);
 
 // 12. Create a copy of today
 
+// const today = new Date();
+
+// const copyOfToday = new Date(today);
+
+// console.log(today);
+// console.log(copyOfToday);
+
 // 13. Use the setter methods to find out what is 3years, 2months and 1 day from now
+
+// Answer A:
+// const today = new Date();
+
+// today.setDate(today.getYear() + 3);
+// today.setDate(today.getMonth() + 2);
+// today.setDate(today.getDate() + 1);
+
+// console.log(today);
+
+// Answer B:
+// Function
+// const today = new Date();
+
+// function getFutureDate(years, months, days) {
+//   const futureDate = new Date(today);
+//   futureDate.setFullYear(today.getFullYear() + years);
+//   futureDate.setMonth(today.getMonth() + months);
+//   futureDate.setDate(today.getDate() + days);
+
+//   return futureDate;
+// }
+// const futureDate = getFutureDate(3, 2, 1);
+// console.log(futureDate);
+
+// Notes
+// `setDate()`: sets the day of the month for a specified date according to local time.
+// `setFullYear()`: sets the full year for a specified date according to local time.
+// `setMonth()`: sets the month for a specified date according to local time.
 
 // 14. Get your timezone from today (remember it's in mins and the sign is inverted)
 
+// const today = new Date();
+
+// console.log(today.getTimezoneOffset());
+
 // 15. Use the Intl module formatter (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format) to get the time in Sydney (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
+// const today = new Date();
+// const sydneyTimeOptions = {
+//   timeZone: "Australia/Sydney",
+//   hour12: false, // Use 24-hour format
+//   hour: "2-digit",
+//   minute: "2-digit",
+//   second: "2-digit",
+// };
+
+// const sydneyTime = new Intl.DateTimeFormat("en-AU", sydneyTimeOptions).format(
+//   today
+// );
+
+// console.log("Sydney Time:", sydneyTime);
+
 // 16. Write a function that creates a years/months/days/hours/mins/secs/ms duration in ms.
+
+const today = new Date();
+function msDuration(years, months, days, hours, mins, secs, ms) {
+  const years = 365 * 24 * 60 * 60 * 1000;
+  const months = 365 * 24 * 60 * 60 * 1000;
+}
 
 // 17. Write a function that returns an object with the years/months/days/hours/mins/secs/ms between 2 dates
 
