@@ -239,28 +239,19 @@ console.log("Duration in milliseconds: ", durationInMs);
 
 // 17. Write a function that returns an object with the years/months/days/hours/mins/secs/ms between 2 dates
 
-function timesToObject(date1, date2) {
-  const date1 = {
-    years: years,
-    months: months,
-    days: days,
-    hours: hours,
-    mins: mins,
-    secs: secs,
-  };
-  return date1;
-
-  const date2 = {
-    years: years,
-    months: months,
-    days: days,
-    hours: hours,
-    mins: mins,
-    secs: secs,
-  };
-  return date2;
-
+function durationBetweenDates(date1, date2) {
   const durationBetweenDates = date1 - date2;
+
+  // return object
+  const result = {
+    years: years,
+    months: months,
+    days: days,
+    hours: hours,
+    mins: mins,
+    secs: secs,
+  };
+  return result;
 }
 
 /*****************************************************************
