@@ -204,13 +204,64 @@
 
 // 16. Write a function that creates a years/months/days/hours/mins/secs/ms duration in ms.
 
-const today = new Date();
-function msDuration(years, months, days, hours, mins, secs, ms) {
-  const years = 365 * 24 * 60 * 60 * 1000;
-  const months = 365 * 24 * 60 * 60 * 1000;
+function msDuration(
+  years = 0,
+  months = 0,
+  days = 0,
+  hours = 0,
+  mins = 0,
+  secs = 0,
+  ms = 0
+) {
+  // MS calculations
+  const msInSec = 1000;
+  const msInMin = 60 * msInSec;
+  const msInHour = 60 * msInMin;
+  const msInDay = 24 * msInHour;
+
+  //month & year calculation
+  const avgDaysInMonth = 30.44; // Average number of days in a month
+  const totalDaysInYear = years * 365.25 + months * avgDaysInMonth + days; // Average days in a year
+  const daysToMs = totalDaysInYear * msInDay; // Converting total days in year to MS
+
+  // hours, mins and secs to MS
+  const hoursToMs = hours * msInHour;
+  const minsToMs = mins * msInMin;
+  const secsToMs = secs * msInSec;
+
+  //sum all MS
+  const totalMs = daysToMs + hoursToMs + minsToMs + secsToMs;
+
+  return totalMs;
 }
+const durationInMs = msDuration(1, 1, 1, 10, 10, 10, 1000);
+console.log("Duration in milliseconds: ", durationInMs);
 
 // 17. Write a function that returns an object with the years/months/days/hours/mins/secs/ms between 2 dates
+
+function timesToObject(date1, date2) {
+  const date1 = {
+    years: years,
+    months: months,
+    days: days,
+    hours: hours,
+    mins: mins,
+    secs: secs,
+  };
+  return date1;
+
+  const date2 = {
+    years: years,
+    months: months,
+    days: days,
+    hours: hours,
+    mins: mins,
+    secs: secs,
+  };
+  return date2;
+
+  const durationBetweenDates = date1 - date2;
+}
 
 /*****************************************************************
  * For date-fns Exercises follow link on page

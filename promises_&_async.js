@@ -1,4 +1,4 @@
-//PROMISES
+//PROMISES (typically promises are built into libraries so we don't have to write them, but useful to understand the mechanics)
 // const promise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     reject("It failed");
