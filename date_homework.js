@@ -240,7 +240,12 @@ console.log("Duration in milliseconds: ", durationInMs);
 // 17. Write a function that returns an object with the years/months/days/hours/mins/secs/ms between 2 dates
 
 function durationBetweenDates(date1, date2) {
-  const durationBetweenDates = date1 - date2;
+  //convert dates to ms
+  const date1 = msDuration(date1);
+  const date2 = msDuration(date2);
+
+  // Calculate the time difference in milliseconds using amath.abs for a non-negative
+  const durationBetweenDates = Math.abs(date1 - date2);
 
   // return object
   const result = {
