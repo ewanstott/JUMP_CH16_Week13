@@ -259,6 +259,18 @@ function durationBetweenDates(date1, date2) {
   return result;
 }
 
+//practice object
+// function createPerson(name, age, color) {
+//   return {
+//     name: name,
+//     age: age,
+//     color: color,
+//   };
+// }
+
+// const person1 = createPerson("ewan", 32, "orange");
+
+// console.log(person1);
 /*****************************************************************
  * For date-fns Exercises follow link on page
  ******************************************************************/
